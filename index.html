@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><img src="./image/logo.png" alt="logo" /></div>
+      <div class="nav-menu">
+        <i class="fas fa-bars" onclick="menubar()"></i>
+        <ul class="menu-items">
+          <li class="menu-item"><a href="#" class="item">Home</a></li>
+          <li class="menu-item"><a href="#" class="item">About Us</a></li>
+          <li class="menu-item"><a href="#" class="item">Contact Us</a></li>
+          <li class="menu-item"><button class="btn">Sign Up</button></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="menuBar" class="mobile-menu">
+      <ul id="menuItems" class="menu-items trans">
+        <li class="menu-item"><a href="#" class="item">Home</a></li>
+        <li class="menu-item"><a href="#" class="item">About Us</a></li>
+        <li class="menu-item"><a href="#" class="item">Contact Us</a></li>
+        <li class="menu-item"><button class="btn">Sign Up</button></li>
+      </ul>
+    </div>
+    <main class="container">
+      <div class="col col-1">
+        <img src="./image/logo.png" alt="logo" class="col-logo" />
+        <p>Quality course, Affordable Price.</p>
+        <h1>Your Company Name</h1>
+        <img src="./image/google-paly.png" alt="google-paly" />
+      </div>
+      <div class="col col-2">
+        <img src="./image/hand.png" alt="hand phone" />
+      </div>
+    </main>
+    <script>
+      var isMenuHidden = true;
+      window.addEventListener("resize", () => {
+        if (screen.width > 750) {
+          let menu = document.getElementById("menuBar");
+          menu.style.display = "none";
+
+          isMenuHidden = true;
+        }
+      });
+      function menubar(e) {
+        var menu = document.getElementById("menuBar");
+        var menuItems = document.getElementById("menuItems");
+        if (isMenuHidden) {
+          menu.style.display = "block";
+          menuItems.classList.add("trans");
+
+          isMenuHidden = false;
+        } else {
+          menu.style.display = "none";
+          isMenuHidden = true;
+        }
+      }
+    </script>
+  </body>
+</html>
